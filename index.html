@@ -46,7 +46,6 @@ var data = `-33.327089759129414 115.63345448625921 hospital.png
 -33.32682713197855 115.63337484541637 hospital.png
 -33.326966081325935 115.63325146380168 weapons.png
 -33.32691677674416 115.6336859816621 weapons.png`;
-var old_position;
 var markers = data.split("\n");
 all_markers = [];
 
@@ -78,20 +77,14 @@ all_markers = [];
 			});
 			all_markers.push(marker);
 			}
-		old_position = new google.maps.Marker({
-		position: {lat: -33.3276 , lng: 115.6330},
-		map: zombie_map
-		})
 
 function set_my_position(position){
-old_position.setMap(null);
 var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 var marker = new google.maps.Marker({
           position: pos,
           icon: "player.png",
           map: zombie_map
         });
-old_position = markers;
 }
 }
 </script>
